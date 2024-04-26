@@ -1,0 +1,75 @@
+---
+whiskers:
+  version: 2.0.0
+  matrix:
+    - flavor
+  filename: "catppuccin-{{ flavor.identifier }}.json"
+---
+{%- set palette = flavor.colors -%}
+{
+    "name": "Catppuccin {{ flavor.name }}",
+    "identifier": "catppuccin-{{ flavor.identifier }}",
+    "options": {
+        "supportsWallpaperTinting": "false",
+        "allowsSidebarIconTinting": "true",
+        "style": "{% if flavor.dark %}dark{% else %}light{% endif %}",
+        "allowsSidebarVibrancy": "false"
+    },
+    "appColors": {
+        "sectionDivider": "#{{ palette.mantle.hex }}ff",
+        "subsectionDivider": "#{{ palette.mantle.hex }}ff",
+        "selectedContentBackground": "{% if flavor.dark %}#{{ palette.overlay2.hex }}1a{% else %}#{{ palette.overlay2.hex }}8c{% endif %}",
+        "selectedTextBackground": "#{{ palette.overlay2.hex }}33",
+        "background": "#{{ palette.base.hex }}",
+        "tagBackground": "#{{ palette.blue.hex }}",
+        "itemDivider": "#{{ palette.base.hex }}",
+        "foreground": "#{{ palette.text.hex }}",
+        "sidebarBackground": "#{{ palette.crust.hex }}",
+        "snippetsListBackground": "#{{ palette.crust.hex }}",
+        "controlAccent": "#{{ palette.peach.hex }}ff",
+        "toolbarBackground": "#{{ palette.crust.hex }}ff",
+        "toolbarStandaloneBackground": "#{{ palette.crust.hex }}ff",
+        "insertionPoint": "#{{ palette.peach.hex }}ff",
+        "inactiveSegmentBackground": "#{{ palette.crust.hex }}ff",
+        "inactiveSegmentText": "#{{ palette.text.hex }}ff",
+        "mouseOverInactiveSegmentBackground": "#{{ palette.overlay2.hex }}33",
+        "activeSegmentBackground": "#{{ palette.base.hex }}ff",
+        "activeSegmentText": "#{{ palette.text.hex }}ff",
+    },
+    "syntaxColors": {
+        "Comment": "#{{ palette.overlay2.hex }}",
+        "Generic.Deleted": "#{{ palette.red.hex }}",
+        "Generic.Error": "#{{ palette.red.hex }}",
+        "Generic.Heading": "#{{ palette.blue.hex }}",
+        "Generic.Inserted": "#{{ palette.green.hex }}",
+        "Generic.Subheading": "#{{ palette.subtext0.hex }}",
+        "Generic.Traceback": "#{{ palette.red.hex }}",
+        "Keyword": "#{{ palette.mauve.hex }}",
+        "LineNumbers": "#{{ palette.overlay1.hex }}",
+        "LineNumbers.Highlight": "#{{ palette.lavender.hex }}",
+        "Literal.Date": "#{{ palette.pink.hex }}",
+        "Name.Attribute": "#{{ palette.peach.hex }}",
+        "Name.Builtin": "#{{ palette.red.hex }}",
+        "Name.Class": "#{{ palette.yellow.hex }}",
+        "Name.Constant": "#{{ palette.peach.hex }}",
+        "Name.Decorator": "#{{ palette.peach.hex }}",
+        "Name.Exception": "#{{ palette.mauve.hex }}",
+        "Name.Function": "#{{ palette.blue.hex }}",
+        "Name.Label": "#{{ palette.sapphire.hex }}",
+        "Name.Namespace": "#{{ palette.lavender.hex }}",
+        "Name.Property": "#{{ palette.lavender.hex }}",
+        "Name.Tag": "#{{ palette.mauve.hex }}",
+        "Name.Variable": "#{{ palette.text.hex }}",
+        "Number": "#{{ palette.peach.hex }}",
+        "Operator": "#{{ palette.sky.hex }}",
+        "Punctuation": "#{{ palette.overlay2.hex }}",
+        "String": "#{{ palette.green.hex }}",
+        "String.Char": "#{{ palette.teal.hex }}",
+        "String.Doc": "#{{ palette.teal.hex }}",
+        "String.Escape": "#{{ palette.pink.hex }}",
+        "String.Heredoc": "#{{ palette.teal.hex }}",
+        "String.Interpol": "#{{ palette.pink.hex }}",
+        "String.Regex": "#{{ palette.peach.hex }}",
+        "String.Symbol": "#{{ palette.flamingo.hex }}",
+    }
+}
